@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ChooseYourOwnAdventureP3</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="text_view_welcom">Welcome to the start of your own adventure</string>
+    <string name="button_start_traveling">Start Traveling!</string>
+    <string name="title_activity_alley">AlleyActivity</string>
+    <string name="title_activity_room_acitvity">RoomAcitvity</string>
+    <string name="text_view_alley_screen">This is the Alley Screen</string>
+    <string name="text_view_alley_where_to_go">You have ventured down a dark alley, where would you like to go next</string>
+    <string name="button_go_left">Go Left</string>
+    <string name="button_go_right">Go Right</string>
+    <string name="button_continue">Continue</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_view_room">This is the Room View!!</string>
+    <string name="text_view_you_lost">You Lost!</string>
+    <string name="text_view_you_won">You Won!</string>
+    <string name="text_view_room_enter">You have entered a room wiht two doors</string>
+    <string name="text_view_door_1">Enter Door 1</string>
+    <string name="text_view_door_2">Enter Door 2</string>
+    <string name="text_view_room_random">Random</string>
+    <string name="button_hard">HARD</string>
+    <string name="button_easy">EASY</string>
+    <string name="button_legendary">LEGENDARY</string>
+
+</resources>

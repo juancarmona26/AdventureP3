@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AdventureP3.iml" filepath="$PROJECT_DIR$/AdventureP3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AdventurePr3.iml" filepath="$PROJECT_DIR$/AdventurePr3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ChooseYourOwnAdventureP2.iml" filepath="$PROJECT_DIR$/ChooseYourOwnAdventureP2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ChooseYourOwnAdventurePart2.iml" filepath="$PROJECT_DIR$/ChooseYourOwnAdventurePart2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+    </modules>
+  </component>
+</project>
+
