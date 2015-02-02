@@ -40,6 +40,7 @@ public class AlleyFragment extends Fragment {
         ContainerActivity.randomAlleyStates = new ArrayList<>();
         setDifferentRandomNumbers();
         chooseDifficulty();
+        setRetainInstance(true);
 
         return view;
     }
@@ -184,4 +185,7 @@ public class AlleyFragment extends Fragment {
                     + " must implement OnClickAdventureButtons");
         }
     }
+
+
+
 }

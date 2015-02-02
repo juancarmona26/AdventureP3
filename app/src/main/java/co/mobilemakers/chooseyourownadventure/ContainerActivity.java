@@ -1,18 +1,23 @@
 package co.mobilemakers.chooseyourownadventure;
 
-import android.app.Activity;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import java.util.List;
 import java.util.Random;
 
-public class ContainerActivity extends Activity implements  AlleyFragment.OnClickAdventureButtons,
+public class ContainerActivity extends ActionBarActivity implements  AlleyFragment.OnClickAdventureButtons,
                                                                     RoomFragment.OnClickButtons,
                                                                     MainFragment.InitialEvents{
 
+    public static final int RESULT_SETTINGS = 1;
     public static final String LOG_TAG = ContainerActivity.class.getName();
     public static List<Integer> randomAlleyStates = null;
     public static List<Integer> randomRoomStates = null;
@@ -25,6 +30,7 @@ public class ContainerActivity extends Activity implements  AlleyFragment.OnClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_container);
         showMainFragment();
+        customizeActionBar();
     }
 
     private void showMainFragment() {
@@ -109,10 +115,11 @@ public class ContainerActivity extends Activity implements  AlleyFragment.OnClic
 
 
 
-     public void showResult(String resultToShow) {
+     public void showResult(String resultToShow, int status) {
         ResultFragment newFragment = new ResultFragment();
         Bundle args = new Bundle();
         args.putString("resultToShow", resultToShow);
+        args.putInt("status",status );
         newFragment.setArguments(args);
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         transaction.replace(R.id.layout_container, newFragment);
@@ -127,11 +134,11 @@ public class ContainerActivity extends Activity implements  AlleyFragment.OnClic
         switch (whereToFall) {
 
             case 0:
-                showResult("You've reached the gold!");
+                showResult("You've reached the gold!", whereToFall);
                 break;
 
             case 1:
-                showResult("You've fallen in to the pit of despair");
+                showResult("You've fallen in to the pit of despair", whereToFall);
                 break;
         }
     }
@@ -143,7 +150,45 @@ public class ContainerActivity extends Activity implements  AlleyFragment.OnClic
 
     @Override
     public void onButtonStartAdventureClicked(int difficulty) {
-        this.difficulty = difficulty;
+        ContainerActivity.difficulty = difficulty;
         chooseFragmentRandomly();
+    }
+
+    private void customizeActionBar() {
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle(R.string.action_bar_title);
+        actionBar.setIcon(R.drawable.ic_launcher);
+        actionBar.setDisplayShowHomeEnabled(true);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        switch (id) {
+            case R.id.action_settings:
+                Intent intent = new Intent(this, ActivitySettings.class);
+                startActivityForResult(intent, RESULT_SETTINGS);
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+       if (getFragmentManager().getBackStackEntryCount() > 0) {
+            getFragmentManager().popBackStack();
+        } else {
+            super.onBackPressed();
+        }
     }
 }

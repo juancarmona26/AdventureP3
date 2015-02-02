@@ -9,6 +9,6 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/text_view_you_won"
-        android:id="@+id/textView5"
+        android:id="@+id/text_view_winner_message"
         android:layout_gravity="center_horizontal" />
 </LinearLayout>

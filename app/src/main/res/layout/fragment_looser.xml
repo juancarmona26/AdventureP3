@@ -10,5 +10,5 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/text_view_you_lost"
-        android:id="@+id/textView4" />
+        android:id="@+id/text_view_looser_text" />
 </LinearLayout>

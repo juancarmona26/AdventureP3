@@ -3,15 +3,21 @@ package co.mobilemakers.chooseyourownadventure;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-public class MainFragment extends Fragment {
+import java.util.Random;
 
+public class MainFragment extends Fragment {
+    public static final String USERNAME_PREFERENCE ="userPreferences";
+    public static final String WINNER_MESSAGE_PREFERENCE= "winner_message_preference";
+    public static final String LOOSER_MESSAGE_PREFERENCE = "looser_message_preference";
     private static final String LOG_TAG = MainFragment.class.getName();
     View view;
     InitialEvents mCallBack;

@@ -33,15 +33,19 @@ public class RoomFragment extends Fragment {
         setButtonEventsEasyMode();
         ContainerActivity.randomRoomStates = new ArrayList<>();
         setDifferentRandomNumbers();
+        chooseGameDifficulty();
+        setRetainInstance(true);
 
+        return view;
+    }
+
+    private void chooseGameDifficulty() {
         if(ContainerActivity.difficulty == 0 ) {
             setButtonEventsEasyMode();
         } else if (ContainerActivity.difficulty == 1) {
             setButtonEventsLegendaryMode();
             randomNumberToWin = ContainerActivity.randomNumberToShowView(100);
         }
-
-        return view;
     }
 
     private void setDifferentRandomNumbers() {
@@ -95,8 +99,6 @@ public class RoomFragment extends Fragment {
     View.OnClickListener clickListenerLegendary = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            boolean firstValidation;
-
             switch (v.getId()){
                 case R.id.button_door_1:
                     validateWhereToGoLegendaryMode(0);
@@ -112,7 +114,7 @@ public class RoomFragment extends Fragment {
     };
 
     private void validateWhereToGoLegendaryMode(int position) {
-        if(ContainerActivity.randomAlleyStates.get(position) == randomNumberToWin) {
+        if(ContainerActivity.randomRoomStates.get(position) == randomNumberToWin) {
             mOnClickButtons.onButtonClicked(0);
         } else {
             mOnClickButtons.onButtonClicked(1);

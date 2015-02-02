@@ -24,5 +24,15 @@
     <string name="button_hard">HARD</string>
     <string name="button_easy">EASY</string>
     <string name="button_legendary">LEGENDARY</string>
+    <string name="title_activity_activity_settings">ActivitySettings</string>
+    <string name="pref_username_title">Here, enter your name</string>
+    <string name="pref_username_summary">Name which will be used on the game</string>
+    <string name="pref_winner_text">Winner Message</string>
+    <string name="pref_winner_text_summary">Personalize you winner message to be shown when you win</string>
+    <string name="pref_looser_text_summary">Personalize you looser message to be shown when you loose</string>
+    <string name="pref_looser_text">Looser message</string>
+    <string name="pref_category_customization">Customization</string>
+    <string name="default_username">Usuario</string>
+    <string name="action_bar_title">Brave Fighter</string>
 
 </resources>
